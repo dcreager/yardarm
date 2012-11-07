@@ -2,10 +2,10 @@
 /.build/
 
 RELEASE-VERSION
-APPNAME.pc
+yardarm.pc
 
-/APPNAME*.tar.gz
-/APPNAME*.tar.bz2
+/yardarm*.tar.gz
+/yardarm*.tar.bz2
 
 *.[oa]
 *.os

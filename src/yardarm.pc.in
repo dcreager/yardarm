@@ -1,0 +1,14 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+sharedir=${prefix}/share
+sphinxdir=${sharedir}/doc/yardarm/html
+
+Name: yardarm
+Description: Runtime type information for C
+Version: @VERSION@
+URL: http://github.com/redjack/yardarm/
+Libs: -L${libdir} -lyardarm
+Cflags: -I${includedir}
+Requires: libcork >= 0.8.0

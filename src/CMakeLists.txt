@@ -12,24 +12,24 @@ include_directories(../include)
 #-----------------------------------------------------------------------
 # Build the library
 
-file(GLOB_RECURSE LIBAPPNAME_SRC libAPPNAME/*.c)
+set(LIBYARDARM_SRC
+    libyardarm/foo.c
+)
 
-add_library(libAPPNAME SHARED ${LIBAPPNAME_SRC})
-set_target_properties(libAPPNAME PROPERTIES
-    OUTPUT_NAME appname
+add_library(libyardarm SHARED ${LIBYARDARM_SRC})
+set_target_properties(libyardarm PROPERTIES
+    OUTPUT_NAME yardarm
     SOVERSION 0.0.0)
-target_link_libraries(libAPPNAME
+target_link_libraries(libyardarm
     ${CORK_LIBRARIES}
 )
 
-install(TARGETS libAPPNAME
-    RUNTIME DESTINATION bin
-    LIBRARY DESTINATION lib)
+install(TARGETS libyardarm DESTINATION lib)
 
 #-----------------------------------------------------------------------
 # Generate the pkg-config file
 
 set(prefix ${CMAKE_INSTALL_PREFIX})
-configure_file(libAPPNAME.pc.in libAPPNAME.pc @ONLY)
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libAPPNAME.pc
+configure_file(yardarm.pc.in yardarm.pc @ONLY)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/yardarm.pc
         DESTINATION lib/pkgconfig)
