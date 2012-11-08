@@ -17,7 +17,6 @@
 #include <check.h>
 
 #include "yardarm/c99.h"
-#include "yardarm/types.h"
 #include "yardarm/yardarm.h"
 
 #include "helpers.h"
