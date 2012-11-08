@@ -13,6 +13,7 @@
 
 #include <libcork/core.h>
 
+#include <yardarm/declarations.h>
 #include <yardarm/types.h>
 
 
