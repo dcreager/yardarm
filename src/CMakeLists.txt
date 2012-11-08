@@ -13,7 +13,7 @@ include_directories(../include)
 # Build the library
 
 set(LIBYARDARM_SRC
-    libyardarm/foo.c
+    libyardarm/c99.c
 )
 
 add_library(libyardarm SHARED ${LIBYARDARM_SRC})
