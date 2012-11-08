@@ -8,14 +8,12 @@
  * ----------------------------------------------------------------------
  */
 
-#include <libcork/core.h>
-
-#include "yardarm/c99.h"
-#include "yardarm/macros/descriptors.h"
+#ifndef YARDARM_MACROS_BASICS_H
+#define YARDARM_MACROS_BASICS_H
 
 
-#define ___(name, c_type) \
-    ya_define_type(yad_##name); \
-    ya_define_type(yad_##name##_p);
-ya_all_c99_types(___);
-#undef ___
+#define yad(name)  yad_##name
+#define yat(name)  yat_##name
+
+
+#endif /* YARDARM_MACROS_BASICS_H */

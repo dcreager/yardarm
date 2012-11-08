@@ -10,18 +10,8 @@
 
 #include <libcork/core.h>
 
-#include "yardarm/c99.h"
-#include "yardarm/declarations.h"
-#include "yardarm/types.h"
 #include "yardarm/yardarm.h"
+#include "yardarm/macros/descriptors.h"
 
 
-ya_declare_enum(
-    yat_ya_kind,
-    enum ya_kind,
-    ya_enum_value(YA_KIND, ENUM),
-    ya_enum_value(YA_KIND, POINTER),
-    ya_enum_value(YA_KIND, SCALAR),
-    ya_enum_value(YA_KIND, STRUCT),
-    ya_enum_value(YA_KIND, UNION)
-);
+ya_define_type(yad_ya_kind);

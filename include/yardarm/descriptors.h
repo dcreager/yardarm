@@ -8,8 +8,8 @@
  * ----------------------------------------------------------------------
  */
 
-#ifndef YARDARM_TYPES_H
-#define YARDARM_TYPES_H
+#ifndef YARDARM_DESCRIPTORS_H
+#define YARDARM_DESCRIPTORS_H
 
 #include <libcork/core.h>
 
@@ -39,4 +39,4 @@ struct ya_type {
 };
 
 
-#endif /* YARDARM_TYPES_H */
+#endif /* YARDARM_DESCRIPTORS_H */

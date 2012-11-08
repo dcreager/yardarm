@@ -13,8 +13,10 @@
 
 /* include all of the parts */
 #include <yardarm/c99.h>
-#include <yardarm/declarations.h>
-#include <yardarm/types.h>
+#include <yardarm/descriptors.h>
 #include <yardarm/yardarm.h>
+#include <yardarm/macros/basics.h>
+#include <yardarm/macros/descriptors.h>
+#include <yardarm/macros/name.h>
 
 #endif /* YARDARM_H */
