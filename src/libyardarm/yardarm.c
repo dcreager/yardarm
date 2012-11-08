@@ -12,10 +12,15 @@
 
 #include "yardarm/c99.h"
 #include "yardarm/types.h"
+#include "yardarm/yardarm.h"
 
 
-#define ___(name, c_type) \
-ya_declare_named_scalar(yat_##name, c_type, #c_type); \
-ya_declare_named_pointer(yat_##name##_p, c_type, &yat_##name, #c_type " *");
-ya_all_c99_types(___);
-#undef ___
+ya_declare_enum(
+    yat_ya_kind,
+    enum ya_kind,
+    ya_enum_value(YA_KIND, ENUM),
+    ya_enum_value(YA_KIND, POINTER),
+    ya_enum_value(YA_KIND, SCALAR),
+    ya_enum_value(YA_KIND, STRUCT),
+    ya_enum_value(YA_KIND, UNION)
+);

@@ -14,6 +14,7 @@ include_directories(../include)
 
 set(LIBYARDARM_SRC
     libyardarm/c99.c
+    libyardarm/yardarm.c
 )
 
 add_library(libyardarm SHARED ${LIBYARDARM_SRC})

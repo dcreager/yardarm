@@ -13,7 +13,7 @@
 
 #include <libcork/core.h>
 
-#include <yardarm/c99.h>
+#include <yardarm/types.h>
 
 
 #define ya_all_c99_types(_) \
@@ -43,8 +43,8 @@
 
 
 #define ___(name, c_type) \
-extern const struct ya_type  yat_##name; \
-extern const struct ya_type  yat_##name##_p;
+    ya_declare_type(yat_##name); \
+    ya_declare_type(yat_##name##_p);
 ya_all_c99_types(___);
 #undef ___
 
