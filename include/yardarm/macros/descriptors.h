@@ -21,9 +21,9 @@
 
 #define ya_declare_type__enum_start(ya_name, c_type) \
     extern const struct ya_type  yat(ya_name);
-#define ya_declare_type__named_enum_value(ya_name, prefix, suffix, name) \
+#define ya_declare_type__named_enum_value(loc, ya_name, prefix, suffix, name) \
     /* skip */
-#define ya_declare_type__enum_value(ya_name, prefix, suffix) \
+#define ya_declare_type__enum_value(loc, ya_name, prefix, suffix) \
     /* skip */
 #define ya_declare_type__enum_end(ya_name, c_type) \
     /* skip */
@@ -42,10 +42,11 @@
 
 #define ya_define_type__enum_start(ya_name, c_type) \
     static const struct ya_value  ya_name##__values[] = {
-#define ya_define_type__named_enum_value(ya_name, prefix, suffix, name) \
-        { #name, #suffix, name },
-#define ya_define_type__enum_value(ya_name, prefix, suffix) \
-    ya_define_type__named_enum_value(ya_name, prefix, suffix, prefix##_##suffix)
+#define ya_define_type__named_enum_value(loc, ya_name, prefix, suffix, name) \
+        ya_comma_##loc { #name, #suffix, name }
+#define ya_define_type__enum_value(loc, ya_name, prefix, suffix) \
+    ya_define_type__named_enum_value(loc, ya_name, prefix, suffix, \
+                                     prefix##_##suffix)
 #define ya_define_type__enum_end(ya_name, c_type) \
     }; \
     const struct ya_type  yat(ya_name) = { \

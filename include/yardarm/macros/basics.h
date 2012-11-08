@@ -15,5 +15,10 @@
 #define yad(name)  yad_##name
 #define yat(name)  yat_##name
 
+#define ya_comma_first   /* no comma */
+#define ya_comma_middle  ,
+#define ya_comma_last    ,
+#define ya_comma_only    /* no comma */
+
 
 #endif /* YARDARM_MACROS_BASICS_H */

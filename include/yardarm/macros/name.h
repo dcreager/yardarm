@@ -16,8 +16,9 @@
 #define ya_get_name_(kind, ...)  ya_get_name__##kind(__VA_ARGS__)
 
 #define ya_get_name__enum_start(ya_name, c_type)  #c_type
-#define ya_get_name__named_enum_value(ya_name, prefix, suffix, name)  /* skip */
-#define ya_get_name__enum_value(ya_name, prefix, suffix)  /* skip */
+#define ya_get_name__named_enum_value(loc, ya_name, prefix, suffix, name) \
+    /* skip */
+#define ya_get_name__enum_value(loc, ya_name, prefix, suffix)  /* skip */
 #define ya_get_name__enum_end(ya_name, c_type)  /* skip */
 
 #define ya_get_name__named_pointer(ya_name, ref_name, name)  name
