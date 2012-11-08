@@ -11,7 +11,10 @@
 #ifndef YARDARM_C99_H
 #define YARDARM_C99_H
 
-#include <libcork/core.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <sys/types.h>
 
 #include <yardarm/macros/descriptors.h>
 

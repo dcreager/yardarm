@@ -46,8 +46,6 @@ if (GENERATE_DOC)
   set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/_doctrees")
   set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
 
-  find_prereq_doc(libcork)
-
   set(
     VERSION_FOR_CONF_PY
     "\nrelease=\"${VERSION}\"\nversion=\"${BASE_VERSION}\""

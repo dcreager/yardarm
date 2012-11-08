@@ -11,4 +11,3 @@ Version: @VERSION@
 URL: http://github.com/redjack/yardarm/
 Libs: -L${libdir} -lyardarm
 Cflags: -I${includedir}
-Requires: libcork >= 0.8.0

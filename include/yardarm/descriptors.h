@@ -11,7 +11,7 @@
 #ifndef YARDARM_DESCRIPTORS_H
 #define YARDARM_DESCRIPTORS_H
 
-#include <libcork/core.h>
+#include <stddef.h>
 
 
 enum ya_kind {

@@ -10,7 +10,6 @@ Prerequisite libraries
 To build Yardarm, you need the following libraries installed on your system:
 
   * pkg-config
-  * libcork (https://github.com/redjack/libcork)
   * check (http://check.sourceforge.net)
   * cram (http://pypi.python.org/pypi/cram/)
 

@@ -21,9 +21,6 @@ add_library(libyardarm SHARED ${LIBYARDARM_SRC})
 set_target_properties(libyardarm PROPERTIES
     OUTPUT_NAME yardarm
     SOVERSION 0.0.0)
-target_link_libraries(libyardarm
-    ${CORK_LIBRARIES}
-)
 
 install(TARGETS libyardarm DESTINATION lib)
 

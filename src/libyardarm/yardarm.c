@@ -8,8 +8,6 @@
  * ----------------------------------------------------------------------
  */
 
-#include <libcork/core.h>
-
 #include "yardarm/yardarm.h"
 #include "yardarm/macros/descriptors.h"
 

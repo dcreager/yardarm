@@ -2,7 +2,7 @@
 
 import sys, os
 
-extensions = ['sphinx.ext.intersphinx']
+extensions = []
 source_suffix = '.rst'
 master_doc = 'index'
 project_name = u'Yardarm'
@@ -16,12 +16,6 @@ primary_domain = 'c'
 rst_epilog = """
 .. |project_name| replace:: """ + project_name + """
 """
-
-# Intersphinx stuff
-
-intersphinx_mapping = {
-    'libcork': ('http://libcork.readthedocs.org/en/latest/', None),
-}
 
 # Our CMake build scripts will insert overrides below if the prereq
 # libraries have installed their Sphinx documentation locally.  DO NOT
