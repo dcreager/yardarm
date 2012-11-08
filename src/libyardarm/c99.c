@@ -12,8 +12,4 @@
 #include "yardarm/macros/descriptors.h"
 
 
-#define ___(name, c_type) \
-    ya_define_type(yad_##name); \
-    ya_define_type(yad_##name##_p);
-ya_all_c99_types(___);
-#undef ___
+ya_define_type(ya_all_c99_types);

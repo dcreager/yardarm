@@ -44,6 +44,19 @@
                     (type)->child_count, echild_count); \
     } while (0)
 
+#define test_scalar2(name, p_name, c_type) \
+    do { \
+        test_basics(&yat_##name, #c_type, sizeof(c_type)); \
+        test_count(&yat_##name, 0); \
+        test_basics(&yat_##p_name, #c_type " *", sizeof(c_type *)); \
+        test_count(&yat_##p_name, 0); \
+        fail_unless(yat_##p_name.pointer == &yat_##name, \
+                    "Unexpected reference type for " #p_name); \
+    } while (0)
+
+#define test_scalar(name, c_type) \
+    test_scalar2(name, name##_p, c_type)
+
 #define test_enum_value(type, i, evalue, ename, eshort_name) \
     do { \
         fail_unless(strcmp((type)->values[i].name, ename) == 0, \
@@ -68,13 +81,30 @@
 START_TEST(test_c99)
 {
     DESCRIBE_TEST;
-#define ___(name, c_type) \
-    test_basics(&yat_##name, #c_type, sizeof(c_type)); \
-    test_count(&yat_##name, 0); \
-    test_basics(&yat_##name##_p, #c_type " *", sizeof(c_type *)); \
-    test_count(&yat_##name##_p, 0);
-    ya_all_c99_types(___);
-#undef ___
+    test_scalar2(bool_, bool_p, bool);
+    test_scalar(char, char);
+    test_scalar(schar, signed char);
+    test_scalar(short, short);
+    test_scalar(int, int);
+    test_scalar(long, long);
+    test_scalar(uchar, unsigned char);
+    test_scalar(ushort, unsigned short);
+    test_scalar(uint, unsigned int);
+    test_scalar(ulong, unsigned long);
+    test_scalar(int8, int8_t);
+    test_scalar(int16, int16_t);
+    test_scalar(int32, int32_t);
+    test_scalar(int64, int64_t);
+    test_scalar(intptr, intptr_t);
+    test_scalar(ssize, ssize_t);
+    test_scalar(uint8, uint8_t);
+    test_scalar(uint16, uint16_t);
+    test_scalar(uint32, uint32_t);
+    test_scalar(uint64, uint64_t);
+    test_scalar(uintptr, uintptr_t);
+    test_scalar(size, size_t);
+    test_scalar(float, float);
+    test_scalar(double, double);
 }
 END_TEST
 

@@ -53,12 +53,12 @@
         #c_type, sizeof(c_type), YA_KIND_ENUM, \
         (sizeof(ya_name##__values) / sizeof(ya_name##__values[0])), \
         NULL, ya_name##__values \
-    }
+    };
 
 #define ya_define_type__named_pointer(ya_name, ref_name, name) \
     const struct ya_type  yat(ya_name) = { \
         name, sizeof(void *), YA_KIND_POINTER, 0, &yat(ref_name), NULL \
-    }
+    };
 #define ya_define_type__pointer(ya_name, ref_name) \
     ya_define_type__named_pointer(ya_name, ref_name, \
                                   ya_get_name__pointer(ya_name, ref_name))
@@ -66,7 +66,7 @@
 #define ya_define_type__named_scalar(ya_name, c_type, name) \
     const struct ya_type  yat(ya_name) = { \
         name, sizeof(c_type), YA_KIND_SCALAR, 0, NULL, NULL \
-    }
+    };
 #define ya_define_type__scalar(ya_name, c_type) \
     ya_define_type__named_scalar(ya_name, c_type, \
                                  ya_get_name__scalar(ya_name, c_type))

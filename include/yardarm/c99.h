@@ -11,6 +11,7 @@
 #ifndef YARDARM_C99_H
 #define YARDARM_C99_H
 
+#include <limits.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -22,6 +23,7 @@
 #define yad_bool(_)     yad_bool_(_)
 #define yad_bool_(_)    _(named_scalar, bool_, bool, "bool")
 #define yad_char(_)     _(scalar, char, char)
+#define yad_schar(_)    _(scalar, schar, signed char)
 #define yad_short(_)    _(scalar, short, short)
 #define yad_int(_)      _(scalar, int, int)
 #define yad_long(_)     _(scalar, long, long)
@@ -51,6 +53,7 @@
 
 #define yad_bool_p(_)     _(pointer, bool_p, bool_)
 #define yad_char_p(_)     _(pointer, char_p, char)
+#define yad_schar_p(_)    _(pointer, schar_p, schar)
 #define yad_short_p(_)    _(pointer, short_p, short)
 #define yad_int_p(_)      _(pointer, int_p, int)
 #define yad_long_p(_)     _(pointer, long_p, long)
@@ -79,38 +82,59 @@
 
 
 #define ya_all_c99_types(_) \
-    _(bool,    bool) \
-    _(char,    char) \
-    _(short,   short) \
-    _(int,     int) \
-    _(long,    long) \
-    _(uchar,   unsigned char) \
-    _(ushort,  unsigned short) \
-    _(uint,    unsigned int) \
-    _(ulong,   unsigned long) \
-    _(int8,    int8_t) \
-    _(int16,   int16_t) \
-    _(int32,   int32_t) \
-    _(int64,   int64_t) \
-    _(intptr,  intptr_t) \
-    _(ssize,   ssize_t) \
-    _(uint8,   uint8_t) \
-    _(uint16,  uint16_t) \
-    _(uint32,  uint32_t) \
-    _(uint64,  uint64_t) \
-    _(uintptr, uintptr_t) \
-    _(size,    size_t) \
-    _(float,   float) \
-    _(double,  double) \
+    yad_bool_(_) \
+    yad_char(_) \
+    yad_schar(_) \
+    yad_short(_) \
+    yad_int(_) \
+    yad_long(_) \
+    yad_uchar(_) \
+    yad_ushort(_) \
+    yad_uint(_) \
+    yad_ulong(_) \
+    yad_int8(_) \
+    yad_int16(_) \
+    yad_int32(_) \
+    yad_int64(_) \
+    yad_intptr(_) \
+    yad_ssize(_) \
+    yad_uint8(_) \
+    yad_uint16(_) \
+    yad_uint32(_) \
+    yad_uint64(_) \
+    yad_uintptr(_) \
+    yad_size(_) \
+    yad_float(_) \
+    yad_double(_) \
+    yad_bool_p(_) \
+    yad_char_p(_) \
+    yad_schar_p(_) \
+    yad_short_p(_) \
+    yad_int_p(_) \
+    yad_long_p(_) \
+    yad_uchar_p(_) \
+    yad_ushort_p(_) \
+    yad_uint_p(_) \
+    yad_ulong_p(_) \
+    yad_int8_p(_) \
+    yad_int16_p(_) \
+    yad_int32_p(_) \
+    yad_int64_p(_) \
+    yad_intptr_p(_) \
+    yad_ssize_p(_) \
+    yad_uint8_p(_) \
+    yad_uint16_p(_) \
+    yad_uint32_p(_) \
+    yad_uint64_p(_) \
+    yad_uintptr_p(_) \
+    yad_size_p(_) \
+    yad_float_p(_) \
+    yad_double_p(_) \
 
 
 #define yat_bool  yat_bool_
 
-#define ___(name, c_type) \
-    ya_declare_type(yad_##name); \
-    ya_declare_type(yad_##name##_p);
-ya_all_c99_types(___);
-#undef ___
+ya_declare_type(ya_all_c99_types);
 
 
 #endif /* YARDARM_C99_H */
